@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index',[
+        'title' => 'Home'
+    ]);
 });
 
-Route::get('/login', function () {
-    return view('login.index');
-});
+
+Route::get('/register', [RegisterController::class,'index']);
+Route::get('/login', [LoginController::class,'index']);
