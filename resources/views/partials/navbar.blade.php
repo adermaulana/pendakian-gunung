@@ -21,20 +21,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link {{ ($title === 'Home') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link {{ ($title === 'Portal Berita' || $title === 'Booking Pendakian') ? 'active' : '' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Category
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Booking Pendakian</a></li>
+            <li><a class="dropdown-item" href="/booking">Booking Pendakian</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Portal Berita</a></li>
+            <li><a class="dropdown-item" href="/portal">Portal Berita</a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
         </li>
       </ul>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
