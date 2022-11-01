@@ -34,11 +34,11 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
+          <a class="nav-link {{ ($title === 'About') ? 'active' : '' }}" href="/about">About</a>
         </li>
       </ul>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <form class="d-flex">
+      <form  class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button id="tes" class="btn btn-light btn-outline-dark" type="submit">Search</button>
       </form>

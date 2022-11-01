@@ -23,9 +23,12 @@ Route::get('/', function () {
     ]);
 });
 
+//login
+Route::get('/login', [LoginController::class,'index']);
+Route::post('/login', [LoginController::class,'authenticate']);
+
 
 Route::get('/register', [RegisterController::class,'index']);
-Route::get('/login', [LoginController::class,'index']);
 Route::get('/portal', [PortalController::class,'index']);
 Route::get('/booking', [BookingController::class,'index']);
 Route::get('/about', [AboutController::class,'index']);
