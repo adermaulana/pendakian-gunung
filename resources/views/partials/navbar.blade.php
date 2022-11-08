@@ -30,22 +30,38 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/booking">Booking Pendakian</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/portal">Portal Berita</a></li>
+            <li><a class="dropdown-item" href="/posts">Portal Berita</a></li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ ($title === 'About') ? 'active' : '' }}" href="/about">About</a>
         </li>
       </ul>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <form  class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button id="tes" class="btn btn-light btn-outline-dark" type="submit">Search</button>
-      </form>
-      </ul>
-      <li class="nav-item navbar-nav me-4 mb-2 mb-lg-0">
+
+      @auth
+      <li class="nav-item dropdown navbar-nav me-4">
+          <a class="nav-link {{ ($title === 'Portal Berita' || $title === 'Booking Pendakian') ? 'active' : '' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome Back, {{ auth()->user()->username }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <form action="/logout" method="post">
+                @csrf
+                <button type="submit" class="dropdown-item">
+                  Logout
+                </button>
+              </form>
+            </li>
+          </ul>
+        </li>
+      @else
+        <li class="nav-item navbar-nav me-4 mb-2 mb-lg-0">
           <a class="nav-link active" aria-current="page" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
         </li>
+      @endauth
+
     </div>
   </div>
 </nav>

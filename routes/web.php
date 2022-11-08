@@ -1,11 +1,16 @@
 <?php
 
+use App\Models\Category;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PortalController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,12 +28,30 @@ Route::get('/', function () {
     ]);
 });
 
+
 //login
-Route::get('/login', [LoginController::class,'index']);
+Route::get('/login', [LoginController::class,'index'])->middleware('guest');
 Route::post('/login', [LoginController::class,'authenticate']);
+Route::post('/logout', [LoginController::class,'logout']);
 
+//dashboard
+Route::get('/dashboard',function(){
+    return view('/dashboard.index',[
+        'title' => 'Dashboard'
+    ]);
+})->name('login')->middleware('auth');
 
+Route::resource('/dashboard/posts',DashboardPostController::class)->middleware('auth');
+
+//Berita
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('posts/{post:slug}', [PostController::class, 'show']);
+Route::get('/categories', [PostController::class, 'categories']);
+
+//register
 Route::get('/register', [RegisterController::class,'index']);
+
+//main
 Route::get('/portal', [PortalController::class,'index']);
 Route::get('/booking', [BookingController::class,'index']);
 Route::get('/about', [AboutController::class,'index']);
