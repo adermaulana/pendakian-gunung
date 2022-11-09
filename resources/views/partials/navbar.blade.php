@@ -41,7 +41,7 @@
       @auth
       <li class="nav-item dropdown navbar-nav me-4">
           <a class="nav-link {{ ($title === 'Portal Berita' || $title === 'Booking Pendakian') ? 'active' : '' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome Back, {{ auth()->user()->username }}
+            Welcome Back, {{ auth()->user()->name }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
