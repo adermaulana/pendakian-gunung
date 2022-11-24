@@ -19,7 +19,7 @@
     @endif
 
     <main class="form-signin">
-      <img class="mt-3 mb-2" src="img/pendaki.jpg" alt="" width="100" style="margin-left:120px">
+      <img class="mt-2 mb-2" src="img/pendaki.jpg" alt="" width="100" style="margin-left:120px">
       <h1 class="h4 mb-3 fw-normal text-center ">Please login</h1>
       <form action="/login" method="post">
         @csrf

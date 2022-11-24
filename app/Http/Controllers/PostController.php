@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
 
+
 class PostController extends Controller
 {
     public function index(){
@@ -28,7 +29,7 @@ class PostController extends Controller
 
         return view('posts', [
             "title" => "Portal Berita". $title,
-            "posts" => Post::latest()->filter(request(['search','category','author']))->paginate(7)->withQueryString()
+            "posts" => Post::latest()->filter(request(['search','category','author']))->paginate(10)->withQueryString()
         ]);
 
     }

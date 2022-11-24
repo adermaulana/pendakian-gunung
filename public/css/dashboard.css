@@ -71,8 +71,8 @@ body {
  */
 
 .navbar-brand {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
+  padding-top: .95rem;
+  padding-bottom: .95rem;
   font-size: 1rem;
   background-color: #3a5a40;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
@@ -84,7 +84,7 @@ body {
 }
 
 .navbar .form-control {
-  padding: .75rem 1rem;
+  padding: .95rem 1rem;
   border-width: 0;
   border-radius: 0;
 }

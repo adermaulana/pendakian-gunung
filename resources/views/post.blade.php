@@ -31,7 +31,7 @@
 
             <p class="mb-3"><a class="warna text-decoration-none" href="/posts?author={{ $posts->author->username }}">{{ $posts->author->name }}</a> in<a class="warna text-decoration-none" href="/posts?category={{ $posts->category->slug }}"> {{ $posts->category->nama }}</a></p>
 
-            <img class="img-fluid" src="https://source.unsplash.com/900x400?{{ $posts->category->nama }}" alt="{{ $posts->category->nama }}">
+            <img class="img-fluid" src="{{ asset('storage/' . $posts->image) }}" alt="{{ $posts->category->nama }}">
 
             <article class="my-3 fs-5">
                 {!! $posts->body !!} 

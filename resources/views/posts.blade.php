@@ -19,8 +19,7 @@
 
 @section('container')
 
-<h1 class="mb-3 text-center">{{ $title }} <a  href="/categories" class="btn btn" style="background-color:#3a5a40; color:white;">Categories</a> </h1>
-
+<h1 class="mb-3 text-center">{{ $title }}</h1>
 
 <div class="row justify-content-center mb-3">
     <div class="col-md-6">
@@ -32,8 +31,9 @@
                 <input type="hidden" name="author" value="{{ request('author') }}">
             @endif
          <div class="input-group mb-3">
-           <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request ('search') }}">
+           <input type="text" class="form-control" placeholder="Masukkan Berita yang Ingin di Cari.." name="search" value="{{ request ('search') }}">
            <button class="btn btn" type="submit" style="background-color:#3a5a40; color:white;">Search</button>
+           <a  href="/categories" class="btn btn" style="background-color:#3a5a40; color:white;">Categories</a> 
          </div>
         </form>
     </div>
@@ -42,7 +42,8 @@
 @if ($posts->count())
 
 <div class="card mb-3">
-  <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->nama }}" class="card-img-top" alt="{{ $posts[0]->category->nama }}">
+  <img src="{{ asset('storage/' . $posts[0]->image) }}" class="card-img-top" alt="{{ $posts[0]->category->nama }}">
+ 
   <div class="card-body text-center">
     <h3 class="card-title"><a class="text-decoration-none" href="/posts/{{ $posts[0]->slug  }}">{{ $posts[0]->title }}</a> </h3>
     <p class="mb-3">
