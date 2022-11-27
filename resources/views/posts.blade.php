@@ -42,10 +42,17 @@
 @if ($posts->count())
 
 <div class="card mb-3">
-  <img src="{{ asset('storage/' . $posts[0]->image) }}" class="card-img-top" alt="{{ $posts[0]->category->nama }}">
+
+    @if ($posts[0]->image)
+        <div style="max-height: 400px; overflow:hidden;">
+            <img class="img-fluid" src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->nama }}">
+        </div>
+    @else
+        <img class="card-img-top" src="https://source.unsplash.com/900x400?{{ $posts[0]->category->nama }}" alt="{{ $posts[0]->category->nama }}">
+    @endif
  
   <div class="card-body text-center">
-    <h3 class="card-title"><a class="text-decoration-none" href="/posts/{{ $posts[0]->slug  }}">{{ $posts[0]->title }}</a> </h3>
+    <h4 class="card-title"><a  class="text-decoration-none" href="/posts/{{ $posts[0]->slug  }}">{{ $posts[0]->title }}</a> </h4>
     <p class="mb-3">
         <small class="text-muted">    
         By <a class="text-decoration-none" href="/posts?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }} </a> in<a id="warna" href="/posts?category={{ $posts[0]->category->slug }}"> {{ $posts[0]->category->nama   }}</a> {{ $posts[0]->created_at->diffForHumans() }}
@@ -59,8 +66,6 @@
 </div>
 
 
-
-
 <div class="container">
     <div class="row">
 
@@ -68,8 +73,12 @@
 
         <div class="col-md-4 mb-3">
              <div class="card">
-                <div class="position-absolute p-2  rounded" style="background-color:rgba(0,0,0,0.7)"><a href="/posts?category={{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->nama }}</a> </div>
-                <img src="https://source.unsplash.com/500x400?{{ $post->category->nama }}" class="card-img-top" alt="{{ $post->category->nama }}">
+                <div class="position p-2  rounded" style="background-color:rgba(58,90,64,0.9)"><a href="/posts?category={{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->nama }}</a> </div>
+                    @if ($post->image)
+                        <img class="img-fluid" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->nama }}">
+                    @else
+                        <img class="img-fluid" src="https://source.unsplash.com/900x400?{{ $post->category->nama }}" alt="{{ $post->category->nama }}">
+                    @endif
                  <div class="card-body">
                   <h5 class="card-title">{{ $post -> title }}</h5>
                   <p class="mb-3">

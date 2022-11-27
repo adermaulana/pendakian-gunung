@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Category;
+use App\Models\UserBooking;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\AdminCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,4 +61,7 @@ Route::post('/register', [RegisterController::class,'store']);
 Route::get('/portal', [PortalController::class,'index']);
 Route::get('/booking', [BookingController::class,'index']);
 Route::get('/about', [AboutController::class,'index']);
+
+//CategoryAdmin
+Route::resource('/dashboard/categories', AdminCategoryController::class);
 

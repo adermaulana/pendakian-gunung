@@ -15,11 +15,12 @@
                 </form>
 
                 @if ($posts->image)
-                <img class="img-fluid mt-3" src="{{ asset('storage/' . $posts->image) }}" alt="{{ $posts->category->nama }}">
+                <div style="max-height: 350px; overflow:hidden;">
+                    <img class="img-fluid mt-3" src="{{ asset('storage/' . $posts->image) }}" alt="{{ $posts->category->nama }}">
+                </div>
                 @else
                     <img class="img-fluid mt-3" src="https://source.unsplash.com/900x400?{{ $posts->category->nama }}" alt="{{ $posts->category->nama }}">
                 @endif
-
 
             <article class="my-3 fs-5">
                 {!! $posts->body !!} 

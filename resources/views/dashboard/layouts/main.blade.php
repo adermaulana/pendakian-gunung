@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/style.css">
     <link href="/css/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/footer.css">
 
     <!-- trix editor -->
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0-beta.0/dist/trix.css">
@@ -36,11 +37,14 @@
 <div class="container-fluid">
   <div class="row">
     @include('dashboard.layouts.sidebar')
-
+    
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       @yield('container')
     </main>
   </div>
+</div>
+<div>
+
 </div>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -49,5 +53,7 @@
       <script>
         feather.replace();
       </script>
+  
   </body>
+
 </html>

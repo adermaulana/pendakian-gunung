@@ -31,13 +31,19 @@
 
             <p class="mb-3"><a class="warna text-decoration-none" href="/posts?author={{ $posts->author->username }}">{{ $posts->author->name }}</a> in<a class="warna text-decoration-none" href="/posts?category={{ $posts->category->slug }}"> {{ $posts->category->nama }}</a></p>
 
-            <img class="img-fluid" src="{{ asset('storage/' . $posts->image) }}" alt="{{ $posts->category->nama }}">
+            @if ($posts->image)
+                 <div style="max-height: 350px; overflow:hidden;">
+                    <img class="img-fluid" src="{{ asset('storage/' . $posts->image) }}" alt="{{ $posts->category->nama }}">
+                </div>
+            @else
+                <img class="card-img-top" src="https://source.unsplash.com/900x400?{{ $posts->category->nama }}" alt="{{ $posts->category->nama }}">
+            @endif
 
             <article class="my-3 fs-5">
                 {!! $posts->body !!} 
             </article>
 
-            <a class="d-block text-decoration-none" id="back" href="/posts">Back To Post</a>
+            <a class="d-block text-decoration-none mb-3" id="back" href="/posts">Back To Post</a>
         </div>
     </div>
 </div>

@@ -35,9 +35,9 @@
               @enderror
             </div>
             <div class="form-floating">
-              <input type="number" name="hp" class="form-control rounded-bottom @error('hp') is-invalid @enderror" id="hp" placeholder="Handphone Number" required value="{{ old('hp') }}">
-              <label for="hp">Handphone Number</label>
-              @error('hp')
+              <input type="number" name="number" class="form-control rounded-bottom @error('number') is-invalid @enderror" id="number" placeholder="Handphone Number" required value="{{ old('number') }}">
+              <label for="number">Handphone Number</label>
+              @error('number')
               <div  class="invalid-feedback"> 
                   {{ $message }}
               </div>
@@ -63,7 +63,7 @@
             </div>
             <button style="background-color:#588157;color:white;" class="w-100 btn btn-lg mb-2 mt-3" type="submit">Register</button>
           </form>
-          <small class="d-block text-center">Already Registered? <a style="color:#588157;" href="/login">Login</a></small>
+          <small style="margin-bottom:62px;" class="d-block text-center">Already Registered? <a style="color:#588157;" href="/login">Login</a></small>
         </main>
     </div>
 </div>
