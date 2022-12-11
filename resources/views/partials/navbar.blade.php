@@ -56,11 +56,15 @@
             </li>
           </ul>
         </li>
-      @else
+      
+      @elseif
         <li class="nav-item navbar-nav me-4 mb-2 mb-lg-0">
           <a class="nav-link active" aria-current="page" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
         </li>
+      @else
+      @endif
       @endauth
+
 
     </div>
   </div>

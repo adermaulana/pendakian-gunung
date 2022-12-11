@@ -1,5 +1,3 @@
-
-
 @extends('layouts.main')
 
 @section('container')
@@ -21,7 +19,9 @@
             </a>   
         </div>
 
-    @endforeach  
+    @endforeach
+    
+    
 
     </div>
 </div>

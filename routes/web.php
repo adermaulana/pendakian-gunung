@@ -9,9 +9,10 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\AdminDataBookingController;
+use App\Http\Controllers\AdminDataPendakiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,7 +47,7 @@ Route::get('/dashboard',function(){
 Route::resource('/dashboard/posts',DashboardPostController::class)->middleware('auth');
 
 //slug
-Route::get('/dashboard/posts/checkSlug',[DashboardPostController::class,'checkSlug'])->middleware('auth');
+// Route::get('/dashboard/posts/checkSlug',[DashboardPostController::class,'checkSlug'])->middleware('auth');
 
 //Berita
 Route::get('/posts', [PostController::class, 'index']);
@@ -57,11 +58,16 @@ Route::get('/categories', [PostController::class, 'categories']);
 Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register', [RegisterController::class,'store']);
 
-//main
-Route::get('/portal', [PortalController::class,'index']);
+//Booking
 Route::get('/booking', [BookingController::class,'index']);
+Route::get('/booking/daftar', [BookingController::class,'daftar']);
+Route::get('/booking/lembanna', [BookingController::class,'lembanna']);
+Route::get('/booking/tasosso', [BookingController::class,'tasosso']);
+
 Route::get('/about', [AboutController::class,'index']);
 
-//CategoryAdmin
-Route::resource('/dashboard/categories', AdminCategoryController::class);
+//datapendaki
+Route::resource('/dashboard/datapendaki',AdminDataPendakiController::class)->middleware('auth');
 
+//databooking
+Route::resource('/dashboard/booking',AdminDataBookingController::class)->middleware('auth');

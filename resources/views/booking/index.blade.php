@@ -6,6 +6,16 @@
     .baru {
         font-family: poppins;
     }
+
+    #warna {
+        background-color:#386641;
+        margin-left:4px;
+    }
+    #warna:hover {
+        color:white;
+        background-color:black;
+    }
+
 </style>
 
 <div class="baru card mb-3">
@@ -77,6 +87,6 @@
     </ul>
 </div>
 </div>
-<p>Setelah Membaca Peraturan Disana dan Telah setuju, Silahkan Registrasi Disini <a class="text-decoration-none badge bg-success" href="/register">Registrasi</a></p>
+<p>Setelah Membaca Peraturan Tersebut dan Telah setuju, Silahkan Registrasi Disini <a id="warna" class=" text-decoration-none badge bg" href="/register">Registrasi</a></p>
 
 @endsection

@@ -10,9 +10,7 @@ class LoginController extends Controller
     public function index(){
 
         return view('login.index',[
-            'title' => 'Login',
-            'active' => 'Login'
-
+            'title' => 'Login'
         ]);
 
     }
@@ -29,14 +27,21 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             return redirect()->intended('/dashboard');
-        } 
+        
+        } else if (Auth::guard('userbooking')->attempt($credentials)){
+            $request->session()->regenerate();
+
+            return redirect()->intended('/booking/daftar');
+        
+        }
 
         return back()->with('loginError','Login Failed');
 
     }
 
+
     public function logout(Request $request){
-        Auth::logout();
+        if(Auth::logout());
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();

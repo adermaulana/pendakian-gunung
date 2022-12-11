@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\UserBooking;
 
-class AdminCategoryController extends Controller
+class AdminDataPendakiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,9 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        $this->authorize('admin');
-        return view('dashboard.categories.index',[
-            'categories' => Category::all(),
-            'title' => 'Post Categories'
+        return view('dashboard.datapendaki.index',[
+            'title' => 'Data Pendaki',
+            'userbookings' => UserBooking::all()
         ]);
     }
 
