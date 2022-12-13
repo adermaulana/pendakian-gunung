@@ -37,15 +37,12 @@
           <a class="nav-link {{ ($title === 'About') ? 'active' : '' }}" href="/about">About</a>
         </li>
       </ul>
-
-      @auth
+      @auth('userbooking')
       <li class="nav-item dropdown navbar-nav me-4">
           <a class="nav-link {{ ($title === 'Portal Berita' || $title === 'Booking Pendakian') ? 'active' : '' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome Back, {{ auth()->user()->name }}
+            Welcome Back, {{ auth('userbooking')->user()->name }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
-            <li><hr class="dropdown-divider"></li>
             <li>
               <form action="/logout" method="post">
                 @csrf
@@ -56,13 +53,10 @@
             </li>
           </ul>
         </li>
-      
-      @elseif
+      @else
         <li class="nav-item navbar-nav me-4 mb-2 mb-lg-0">
           <a class="nav-link active" aria-current="page" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
         </li>
-      @else
-      @endif
       @endauth
 
 

@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('booking_data', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_pendaki');
+            $table->string('checkin_date');
+            $table->string('checkout_date');
+            $table->string('jumlah_pendaki');
+            $table->string('bayar')->nullable();
             $table->timestamps();
         });
     }

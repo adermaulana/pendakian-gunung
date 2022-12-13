@@ -43,7 +43,7 @@
                 {!! $posts->body !!} 
             </article>
 
-            <a class="d-block text-decoration-none mb-3" id="back" href="/posts">Back To Post</a>
+            <a  class="d-block text-decoration-none mb-3" id="back" href="/posts">Back To Post</a>
         </div>
     </div>
 </div>

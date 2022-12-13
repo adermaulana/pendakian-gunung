@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\BookingData;
+
 
 class BookingController extends Controller
 {
@@ -29,4 +31,27 @@ class BookingController extends Controller
             'title' => 'Pendaftaran Tasosso'
         ]);
     }
+
+    public function konfirmasi(){
+        return view('booking.konfirmasipembayaran',[
+            'title' => 'Konfirmasi Booking',
+            'bookingdata' => BookingData::latest()->where('id_pendaki', auth('userbooking')->user()->id)->paginate(1)
+        ]);
+    }
+
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            'checkin_date' => 'required',
+            'checkout_date' => 'required',
+            'jumlah_pendaki' => 'required',
+            'bayar' => 'required'
+        ]);
+
+        $validatedData['id_pendaki'] = auth('userbooking')->user()->id;
+
+        BookingData::create($validatedData);
+
+        return redirect('/booking/lembanna')->with('success','Berhasil Booking Ticket');
+    }
+
 }

@@ -17,26 +17,28 @@
           <thead>
             <tr>
               <th scope="col">No</th>
-              <th scope="col">Nama</th>
-              <th scope="col">Email</th>
-              <th scope="col">Alamat</th>
-              <th scope="col">Number</th>
+              <th scope="col">Nama Pendaki</th>
+              <th scope="col">Check In</th>
+              <th scope="col">Check Out</th>
+              <th scope="col">Jumlah Pendaki</th>
+              <th scope="col">Biaya yang Dibayar</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            @foreach ($userbookings as $user)
+            @foreach ($bookingdata as $user)
 
             <tr>
               <td>{{ $loop->iteration }}</td>
-              <td>{{ $user->name }} </td>
-              <td>{{ $user->email}} </td>
-              <td>{{ $user->address }} </td>
-              <td>{{ $user->number }} </td>
+              <td>{{ $user->userbooking->name }}</td>
+              <td>{{ $user->checkin_date }} </td>
+              <td>{{ $user->checkout_date}} </td>
+              <td>{{ $user->jumlah_pendaki }} </td>
+              <td>{{ $user->bayar }}</td>
               <td>
-                <a href="/dashboard/datapendaki/{{ $user->id }}" class="badge bg-success"><span data-feather="eye"></span></a>
-                <a href="/dashboard/datapendaki/{{ $user->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
-                <form action="/dashboard/datapendaki/{{ $user->id }}" method="post" class="d-inline">
+                <a href="/dashboard/booking/{{ $user->id }}" class="badge bg-success"><span data-feather="eye"></span></a>
+                <a href="/dashboard/booking/{{ $user->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                <form action="/dashboard/booking/{{ $user->id }}" method="post" class="d-inline">
                     @method('delete')
                     @csrf
                     <button class="badge bg-danger border-0" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data?')"><span data-feather="x-circle"></span></button>

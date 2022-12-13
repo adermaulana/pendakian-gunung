@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\BookingData;
+use Illuminate\Support\Carbon;
 
 class UserBooking extends Authenticatable
 {
@@ -47,4 +49,12 @@ class UserBooking extends Authenticatable
     // public function posts(){
     //     return $this->hasMany(Post::class);
     // }
+    public function bookings(){
+        return $this->hasMany(BookingData::class); 
+    }
+
+    public function getCreatedAttribute(){
+        return Carbon::parse($this->attributes['created_at'])
+            ->translatedFormat('1, d F Y');
+    }
 }

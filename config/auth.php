@@ -50,6 +50,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        // 'databooking' => [
+        //     'driver' => 'session',
+        //     'provider' => 'databookings',
+        // ],
     ],
 
     /*
@@ -79,6 +84,8 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\UserBooking::class,
         ],
+
+ 
 
         // 'users' => [
         //     'driver' => 'database',

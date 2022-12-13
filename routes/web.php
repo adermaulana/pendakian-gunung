@@ -62,7 +62,10 @@ Route::post('/register', [RegisterController::class,'store']);
 Route::get('/booking', [BookingController::class,'index']);
 Route::get('/booking/daftar', [BookingController::class,'daftar']);
 Route::get('/booking/lembanna', [BookingController::class,'lembanna']);
+Route::post('/booking/lembanna', [BookingController::class,'store']);
 Route::get('/booking/tasosso', [BookingController::class,'tasosso']);
+Route::get('/booking/konfirmasipembayaran', [BookingController::class,'konfirmasi']);
+
 
 Route::get('/about', [AboutController::class,'index']);
 

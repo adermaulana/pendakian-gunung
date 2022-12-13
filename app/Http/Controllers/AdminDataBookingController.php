@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\BookingData;
 use App\Models\UserBooking;
+use Illuminate\Support\Str;
 
 class AdminDataBookingController extends Controller
 {
@@ -16,7 +18,7 @@ class AdminDataBookingController extends Controller
     {
         return view('dashboard.booking.index',[
             'title' => 'Data Booking',
-            'userbookings' => UserBooking::all()
+            'bookingdata' => BookingData::all()
         ]);
     }
 
@@ -81,8 +83,10 @@ class AdminDataBookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(BookingData $booking)
     {
-        //
+        BookingData::destroy($booking->id);
+
+        return redirect('/dashboard/booking')->with('success','Post has been Deleted');
     }
 }

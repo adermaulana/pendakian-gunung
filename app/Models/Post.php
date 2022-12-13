@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Cviebrock\EloquentSluggable\Sluggable;
 use App\Models\Category;
+use Illuminate\Support\Carbon;
 
 class Post extends Model
 {
@@ -65,6 +66,11 @@ class Post extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function getCreatedAttribute(){
+        return Carbon::parse($this->attributes['created_at'])
+            ->translatedFormat('1, d F Y');
     }
 
 }
