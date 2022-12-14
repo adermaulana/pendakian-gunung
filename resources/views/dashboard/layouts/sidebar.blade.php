@@ -43,7 +43,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/kontenkreator*') ? 'active' : '' }}" href="/dashboard/datapendaki">
+            <a class="nav-link {{ Request::is('dashboard/kontenkreator*') ? 'active' : '' }}" href="/dashboard/kreator">
               <span data-feather="users"></span>
               Tambah Kreator
             </a>

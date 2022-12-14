@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\BookingData;
-use App\Models\UserBooking;
-use Illuminate\Support\Str;
+use App\Models\User;
 
-class AdminDataBookingController extends Controller
+class TambahKreatorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,9 @@ class AdminDataBookingController extends Controller
      */
     public function index()
     {
-        return view('dashboard.booking.index',[
-            'title' => 'Data Booking',
-            'bookingdata' => BookingData::all()
+        return view('dashboard.tambahkreator.index',[
+            'title' => 'Tambah Kreator',
+            'kreator' =>  User::all()
         ]);
     }
 
@@ -29,10 +27,7 @@ class AdminDataBookingController extends Controller
      */
     public function create()
     {
-        return view('dashboard.booking.create',[
-            'title' => 'Create Data',
-            'categories' => BookingData::all()
-        ]);
+        //
     }
 
     /**
@@ -86,10 +81,8 @@ class AdminDataBookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BookingData $booking)
+    public function destroy($id)
     {
-        BookingData::destroy($booking->id);
-
-        return redirect('/dashboard/booking')->with('success','Post has been Deleted');
+        //
     }
 }

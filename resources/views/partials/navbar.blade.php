@@ -43,6 +43,26 @@
             Welcome Back, {{ auth('userbooking')->user()->name }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">My Booking</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <form action="/logout" method="post">
+                @csrf
+                <button type="submit" class="dropdown-item">
+                  Logout
+                </button>
+              </form>
+            </li>
+          </ul>
+        </li>
+      @elseif(Auth::check())
+      <li class="nav-item dropdown navbar-nav me-4">
+          <a class="nav-link {{ ($title === 'Portal Berita' || $title === 'Booking Pendakian') ? 'active' : '' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome Back, {{ auth()->user()->name }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li>
               <form action="/logout" method="post">
                 @csrf
@@ -58,7 +78,6 @@
           <a class="nav-link active" aria-current="page" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
         </li>
       @endauth
-
 
     </div>
   </div>

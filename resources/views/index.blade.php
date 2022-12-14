@@ -60,87 +60,16 @@
 
     <div class="row justify-content-center text-white">
 
+    @foreach( $categories as $category)
       <div class="col-md-4 mb-3">
 
           <div class="card">
 
-            <img src="https://source.unsplash.com/500x400" alt="Desain 1">
+            <img src="https://source.unsplash.com/500x500?{{ $category->nama }}" alt="{{ $category->nama }}">
 
             <div class="img-title">
 
-              <h3>Pendakian</h3>
-
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, labore.</p>
-
-            </div>
-
-          </div> 
-
-      </div>
-
-      <div class="col-md-4 mb-3">
-
-          <div class="card">
-
-            <img src="https://source.unsplash.com/500x400" alt="Desain 2">
-
-            <div class="img-title">
-
-              <h3>Destinasi</h3>
-
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, atque.</p>
-
-            </div>
-
-          </div> 
-
-      </div>
-
-      <div class="col-md-4 mb-3">
-
-          <div class="card">
-
-            <img src="https://source.unsplash.com/500x400" alt="Desain 3">
-
-            <div class="img-title">
-
-              <h3>Lifestyle</h3>
-
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, aliquam!</p>
-
-            </div>
-
-          </div> 
-
-      </div>
-
-      <div class="col-md-4 mb-3">
-
-          <div class="card">
-
-            <img src="https://source.unsplash.com/500x400" alt="Desain 4">
-
-            <div class="img-title">
-
-              <h3>Tips Pendakian</h3>
-
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, ullam.</p>
-
-            </div>
-
-          </div> 
-
-      </div>
-
-      <div class="col-md-4 mb-3">
-
-          <div class="card">
-
-            <img src="https://source.unsplash.com/500x400" alt="Desain 5">
-
-            <div class="img-title">
-
-              <h3>Jalur Pendakian</h3>
+              <a class="text-decoration-none" style="color:green;" href="/posts?category={{ $category->slug }}"><h3> {{ $category->nama }} </h3></a>
 
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, deserunt.</p>
 
@@ -149,7 +78,7 @@
           </div> 
 
       </div>         
-
+    @endforeach
     </div>                   
 
   </div>

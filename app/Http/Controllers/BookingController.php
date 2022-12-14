@@ -33,7 +33,7 @@ class BookingController extends Controller
     }
 
     public function konfirmasi(){
-        return view('booking.konfirmasipembayaran',[
+        return view('booking.konfirmasi',[
             'title' => 'Konfirmasi Booking',
             'bookingdata' => BookingData::latest()->where('id_pendaki', auth('userbooking')->user()->id)->paginate(1)
         ]);

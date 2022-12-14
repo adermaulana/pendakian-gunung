@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>Pendakian | {{ $title }} </title>
   </head>
+ 
   <body>
-  <a style="margin-left:342px;" class="btn btn-success btn-lg mt-3 mb-3" href="/booking/daftar">Back</a>
+  <a style="margin-left:342px;" class="btn btn-success btn-lg mt-3 mb-3" href="/booking/daftar"><span  data-feather="arrow-left"></span></a>
   <a style="" class="btn btn-primary btn-lg mt-3 mb-3" href="/booking/daftar"><span  data-feather="printer"></span></a>  
 
   <center>
@@ -105,12 +106,17 @@
                                                 <td align="right" style="padding: 5px 0;"> {{ $user->jumlah_pendaki }} Orang</td>
                                             </tr>
                                             <tr>
-                                                <td style="padding: 5px 0;">Prorated subscription amount due</td>
-                                                <td align="right" style="padding: 5px 0;">$23.95</td>
+                                                <td style="padding: 5px 0;">Biaya Per-Orang</td>
+                                                <td align="right" style="padding: 5px 0; " >Rp5.000</td>
                                             </tr>
                                             <tr>
-                                                <td style="border-bottom: 2px solid #000; border-top: 2px solid #000; font-weight: bold; padding: 5px 0;">Amount paid</td>
-                                                <td align="right" style="border-bottom: 2px solid #000; border-top: 2px solid #000; font-weight: bold; padding: 5px 0;">$23.95</td>
+                                                
+                                                <td align="center" style="padding: 0px 380px 10px 0px;  " >Jumlah</td>
+                                                <td align="right" style="padding:0px 0px 9px 0px;"> {{ $user->jumlah_pendaki }} x Rp5.000 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mb-4" style="border-bottom: 2px solid #000; border-top: 2px solid #000; font-weight: bold; padding: 5px 0;">Total Bayar</td>
+                                                <td align="right" style="border-bottom: 2px solid #000; border-top: 2px solid #000; font-weight: bold; padding: 5px 0;"> {{ $user->bayar }} </td>
                                             </tr>
                                         </tbody>
                                     </table>

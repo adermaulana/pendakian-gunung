@@ -11,6 +11,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\TambahKreatorController;
 use App\Http\Controllers\AdminDataBookingController;
 use App\Http\Controllers\AdminDataPendakiController;
 /*
@@ -26,7 +27,8 @@ use App\Http\Controllers\AdminDataPendakiController;
 
 Route::get('/', function () {
     return view('index',[
-        'title' => 'Home'
+        'title' => 'Home',
+        'categories' => Category::all()
     ]);
 });
 
@@ -74,3 +76,6 @@ Route::resource('/dashboard/datapendaki',AdminDataPendakiController::class)->mid
 
 //databooking
 Route::resource('/dashboard/booking',AdminDataBookingController::class)->middleware('auth');
+
+//tambahkreator
+Route::resource('/dashboard/kreator',TambahKreatorController::class)->middleware('auth');
