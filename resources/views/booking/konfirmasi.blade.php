@@ -61,7 +61,7 @@
                         <tbody>
                             <tr>
                                 <td width="50%" style="padding: 20px;"><strong style="color: #333; font-size: 24px;">{{ $user->bayar }} </strong> Tunai</td>
-                                <td align="right" width="50%" style="padding: 20px;">Cetak, Lalu bawa ke pos registrasi <span class="il"></span></td>
+                                <td align="right" width="50%" style="padding: 20px;">Tunjukkan di pos registrasi <span class="il"></span></td>
                             </tr>
                         </tbody>
                     </table>

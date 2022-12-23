@@ -46,9 +46,11 @@
               </td>
             </tr>
 
-            @endforeach 
+            @endforeach
+            
 
           </tbody>
         </table>
+        <div style="color:salmon;" class="d-flex justify-content-end">{{ $bookingdata->links() }}</div>
       </div>
 @endsection

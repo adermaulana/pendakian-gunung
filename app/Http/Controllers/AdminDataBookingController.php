@@ -18,7 +18,7 @@ class AdminDataBookingController extends Controller
     {
         return view('dashboard.booking.index',[
             'title' => 'Data Booking',
-            'bookingdata' => BookingData::all()
+            'bookingdata' => BookingData::latest()->paginate(15)
         ]);
     }
 

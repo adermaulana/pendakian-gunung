@@ -41,12 +41,12 @@ class BookingController extends Controller
 
     public function store(Request $request){
         $validatedData = $request->validate([
-            'checkin_date' => 'required',
-            'checkout_date' => 'required',
+            'checkin_date' => 'required|after:today',
+            'checkout_date' => 'required|after:checkin_date',
             'jumlah_pendaki' => 'required',
             'bayar' => 'required'
         ]);
-
+        
         $validatedData['id_pendaki'] = auth('userbooking')->user()->id;
 
         BookingData::create($validatedData);

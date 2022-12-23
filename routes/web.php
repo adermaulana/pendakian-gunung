@@ -14,6 +14,7 @@ use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\TambahKreatorController;
 use App\Http\Controllers\AdminDataBookingController;
 use App\Http\Controllers\AdminDataPendakiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,10 +73,13 @@ Route::get('/booking/konfirmasipembayaran', [BookingController::class,'konfirmas
 Route::get('/about', [AboutController::class,'index']);
 
 //datapendaki
-Route::resource('/dashboard/datapendaki',AdminDataPendakiController::class)->middleware('auth');
+Route::resource('/dashboard/datapendaki',AdminDataPendakiController::class)->middleware('admin');
 
 //databooking
-Route::resource('/dashboard/booking',AdminDataBookingController::class)->middleware('auth');
+Route::resource('/dashboard/booking',AdminDataBookingController::class)->middleware('admin');
+
+//tambahkategori
+Route::resource('/dashboard/categories',AdminCategoryController::class)->middleware('auth');
 
 //tambahkreator
-Route::resource('/dashboard/kreator',TambahKreatorController::class)->middleware('auth');
+Route::resource('/dashboard/kreator',TambahKreatorController::class)->middleware('admin');

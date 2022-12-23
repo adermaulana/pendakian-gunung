@@ -98,7 +98,7 @@
 </div>
 
 @else
-    <p class="text-center fs-4">No Posts Found.</p>
+    <p style="margin-bottom:377px;" class="text-center fs-4">No Posts Found.</p>
 @endif
 
 
