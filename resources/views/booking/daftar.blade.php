@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
 @section('container')
+
+@auth('userbooking')
 <h1 class="mb-4"> Pilih Jalur Pendakian </h1>
 
 <div class="container mb-4" >
@@ -25,6 +27,9 @@
 
     </div>
 </div>
+@else
+<h1 style="margin-bottom:499px">Login Terlebih Dahulu <a href="/login">Disini</a></h1>
+@endauth
 
 
 @endsection

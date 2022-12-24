@@ -37,10 +37,11 @@
      <div class="col">
      <div class="card" style="width: 450px; height: 452px;">
         <div class="card-body">
+        <form method="post" action="/booking/lembanna" class="mb-5" enctype="multipart/form-data">
+                @csrf
+            <input type="hidden" id="lokasi" name="lokasi" value="Lembanna">
             <h5 class="card-title">Lembanna</h5>
             <p class="card-text">Pattapang, Kec. Tinggimoncong, Kabupaten Gowa, Sulawesi Selatan 92171</p>
-            <form method="post" action="/booking/lembanna" class="mb-5" enctype="multipart/form-data">
-                @csrf
             <div class="row">
               <div class="col form-floating col-lg-6">
               <input type="date" name="checkin_date" class="form-control rounded-top @error('checkin_date') is-invalid @enderror" id="checkin_date" placeholder="checkin_date" value="{{ old('checkin_date') }}" >

@@ -58,7 +58,7 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories', [PostController::class, 'categories']);
 
 //register
-Route::get('/register', [RegisterController::class,'index']);
+Route::get('/register', [RegisterController::class,'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class,'store']);
 
 //Booking
@@ -67,6 +67,7 @@ Route::get('/booking/daftar', [BookingController::class,'daftar']);
 Route::get('/booking/lembanna', [BookingController::class,'lembanna']);
 Route::post('/booking/lembanna', [BookingController::class,'store']);
 Route::get('/booking/tasosso', [BookingController::class,'tasosso']);
+Route::post('/booking/tasosso', [BookingController::class,'store']);
 Route::get('/booking/konfirmasipembayaran', [BookingController::class,'konfirmasi']);
 
 

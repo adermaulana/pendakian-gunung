@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('jumlah_pendaki');
             $table->string('bayar')->nullable();
             $table->timestamps();
+            $table->string('lokasi');
         });
     }
 

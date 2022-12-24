@@ -11,6 +11,17 @@
         background-color:#386641;
         margin-left:4px;
     }
+
+    #warna2 {
+        background-color:green;
+        margin-left:4px;
+    }
+
+    #warna2:hover {
+        color:white;
+        background-color:black;
+    }
+
     #warna:hover {
         color:white;
         background-color:black;
@@ -88,5 +99,6 @@
 </div>
 </div>
 <p>Setelah Membaca Peraturan Tersebut dan Telah setuju, Silahkan Registrasi Disini <a id="warna" class=" text-decoration-none badge bg" href="/register">Registrasi</a></p>
+<p>Jika sudah memiliki akun silahkan klik disini untuk melakukan pemesanan tiket <a id="warna2" class=" text-decoration-none badge bg" href="/booking/daftar">Booking</a></p>
 
 @endsection

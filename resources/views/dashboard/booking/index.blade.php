@@ -17,6 +17,7 @@
           <thead>
             <tr>
               <th scope="col">No</th>
+              <th scope="col">Lokasi</th>
               <th scope="col">Nama Pendaki</th>
               <th scope="col">Check In</th>
               <th scope="col">Check Out</th>
@@ -30,6 +31,7 @@
 
             <tr>
               <td>{{ $loop->iteration }}</td>
+              <td>{{ $user->lokasi }}</td>
               <td>{{ $user->userbooking->name }}</td>
               <td>{{ $user->checkin_date }} </td>
               <td>{{ $user->checkout_date}} </td>

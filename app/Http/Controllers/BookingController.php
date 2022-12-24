@@ -44,7 +44,8 @@ class BookingController extends Controller
             'checkin_date' => 'required|after:today',
             'checkout_date' => 'required|after:checkin_date',
             'jumlah_pendaki' => 'required',
-            'bayar' => 'required'
+            'bayar' => 'required',
+            'lokasi' => 'required'
         ]);
         
         $validatedData['id_pendaki'] = auth('userbooking')->user()->id;
