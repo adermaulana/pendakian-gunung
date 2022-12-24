@@ -24,4 +24,8 @@ class Category extends Model
             ->translatedFormat('1, d F Y');
     }
 
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
 }

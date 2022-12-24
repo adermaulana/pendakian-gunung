@@ -89,7 +89,17 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $rules = [
+            'nama' => 'required|max:255',
+            'slug' => 'required',
+        ];
+
+        $validateData = $request->validate($rules);
+
+        Category::where('id',$category->id)
+            ->update($validateData);
+
+        return redirect('/dashboard/categories')->with('success','Post has been Update');
     }
 
     /**

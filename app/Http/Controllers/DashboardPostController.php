@@ -57,10 +57,10 @@ class DashboardPostController extends Controller
         if($request->image) {
             $file = $request->image->getClientOriginalName();
             $image = $request->image->storeAs('post-images', $file);
+            $validatedData['image'] = $image;
         }
 
         $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['image'] = $image;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body),200);
 
         Post::create($validatedData);
