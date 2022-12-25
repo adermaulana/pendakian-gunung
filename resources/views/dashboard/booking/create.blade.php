@@ -8,18 +8,30 @@
 <div class="col-lg-8">
     <form method="post" action="/dashboard/booking" class="mb-5" enctype="multipart/form-data">
         @csrf
+        <div class="mb-3">
+         <label for="lokasi" class="form-label">Lokasi</label>
+            <select class="form-select" id="lokasi" name="lokasi">
+                  <option value="Lembanna " selected>Lembanna</option>
+                  <option value="Tasosso">Tasosso</option>
+            </select>
+        </div>
          <div class="mb-3">
-        <label for="pendaki" class="form-label">Nama Pendaki</label>
-            <input type="text" class="form-control @error('pendaki') is-invalid @enderror" id="pendaki" name="pendaki" required autofocus value="{{ old('pendaki')  }}">
-            @error('pendaki')
-            <div  class="invalid-feedback"> 
-                {{ $message }}
-            </div>
-            @enderror
+         <label for="id_pendaki" class="form-label">Nama Pendaki</label>
+            <select class="form-select" name="id_pendaki">
+                @foreach ($bookings as $booking)
+
+                 @if(old('id_pendaki') == $booking->id)
+                  <option value="{{ $booking->id }} " selected> {{ $booking->name }} </option>
+                 @else
+                  <option value="{{ $booking->id }}"> {{ $booking->name }} </option>
+                 @endif
+
+                @endforeach
+            </select>
         </div>
          <div class="mb-3">
             <label for="checkin_date" class="form-label">Check In</label>
-            <input type="date" class="form-control @error('checkin_date') is-invalid @enderror" id="checkin_date" name="slug" value="{{ old('checkin_date') }}">
+            <input type="date" class="form-control @error('checkin_date') is-invalid @enderror" id="checkin_date" name="checkin_date" value="{{ old('checkin_date') }}">
             @error('checkin_date')
             <div  class="invalid-feedback"> 
                 {{ $message }}
@@ -28,7 +40,7 @@
         </div>
         <div class="mb-3">
             <label for="checkout_date" class="form-label">Check Out</label>
-            <input type="date" class="form-control @error('checkout_date') is-invalid @enderror" id="checkout_date" name="slug" value="{{ old('checkout_date') }}">
+            <input type="date" class="form-control @error('checkout_date') is-invalid @enderror" id="checkout_date" name="checkout_date" value="{{ old('checkout_date') }}">
             @error('checkout_date')
             <div  class="invalid-feedback"> 
                 {{ $message }}
@@ -37,7 +49,7 @@
         </div>
          <div class="mb-3">
             <label for="jumlah_pendaki" class="form-label">Jumlah Pendaki</label>
-            <select class="form-select" name="jumlah_pendaki">
+            <select class="form-select" id="jumlah_pendaki" name="jumlah_pendaki">
             <option selected data-price="5.000" value="1">1 Orang</option>
                     <option data-price="10.000" value="2">2 Orang</option>
                     <option data-price="15.000" value="3">3 Orang</option>
@@ -63,36 +75,22 @@
     </form>  
 </div>  
 
-<script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+        $('#jumlah_pendaki').on('change', function(){
+  // ambil data dari elemen option yang dipilih
+  const price = $('#jumlah_pendaki option:selected').data('price');
+  
+  // kalkulasi total harga
 
-    const title = document.querySelector('#title'); 
-    const slug = document.querySelector('#slug');
-    
-    title.addEventListener('change', function(){
-        fetch('/dashboard/posts/checkSlug?title=${title.value}')
-          .then(response => response.json())
-          .then(data => slug.value = data.slug)
-    });
+  const total = price;
+  
+  // tampilkan data ke element
+  $('[name=price]').val(price);
+  
+  $('#bayar').val(`Rp${total}`);
+});
 
-    document.addEventListener('trix-file-accept', function(e){
-        e.preventDefault();
-    })
-
-    function previewImage(){
-        const image = document.querySelector('#image');
-        const imgPreview = document.querySelector('.img-preview');
-
-        imgPreview.style.display = 'block';
-
-        const ofReader = new FileReader();
-        ofReader.readAsDataURL(image.files[0]);
-
-        ofReader.onload = function(oFREvent){
-            imgPreview.src = oFREvent.target.result;
-        }
-    }
-
-    
 </script>
 
 @endsection

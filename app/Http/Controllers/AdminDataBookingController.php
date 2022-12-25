@@ -31,7 +31,7 @@ class AdminDataBookingController extends Controller
     {
         return view('dashboard.booking.create',[
             'title' => 'Create Data',
-            'categories' => BookingData::all()
+            'bookings' => UserBooking::all()
         ]);
     }
 
@@ -43,7 +43,20 @@ class AdminDataBookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'checkin_date' => 'required|after:today',
+            'checkout_date' => 'required|after:checkin_date',
+            'jumlah_pendaki' => 'required',
+            'bayar' => 'required',
+            'lokasi' => 'required',
+            'id_pendaki' => 'required'
+        ]);
+        
+        // $validatedData['id_pendaki'] = auth('userbooking')->user()->id;
+
+        BookingData::create($validatedData);
+
+        return redirect('/dashboard/booking')->with('success','Berhasil Booking Ticket');
     }
 
     /**
@@ -52,9 +65,12 @@ class AdminDataBookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(BookingData $booking)
     {
-        //
+        return view ('dashboard.booking.show',[
+            'title' => 'Data Booking',
+            'bookings' => $booking
+        ]);
     }
 
     /**

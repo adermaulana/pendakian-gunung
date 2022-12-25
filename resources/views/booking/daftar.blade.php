@@ -28,7 +28,7 @@
     </div>
 </div>
 @elseif(Auth::Check())
-<h1 style="margin-bottom:499px">Anda adalah Admin tidak bisa booking<a class="text-decoration-none" href="/dashboard"> Masuk ke Menu Dashboard</a></h1>
+<h1 style="margin-bottom:499px">Anda adalah Admin/Author tidak bisa booking<a class="text-decoration-none" href="/dashboard"> Masuk ke Menu Dashboard</a></h1>
 @else
 <h1 style="margin-bottom:499px">Login Terlebih Dahulu <a href="/login">Disini</a></h1>
 @endauth
