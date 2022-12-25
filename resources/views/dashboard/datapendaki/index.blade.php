@@ -12,7 +12,7 @@
       @endif
 
       <div class="table-responsive col-lg-10">
-        <a style="background-color : #3a5a40; color:white;" class="btn btn" href="/dashboard/posts/create">Create New Data</a>
+        <a style="background-color : #3a5a40; color:white;" class="btn btn" href="/dashboard/datapendaki/create">Create New Data</a>
         <table class="table table-striped table-sm mt-3">
           <thead>
             <tr>

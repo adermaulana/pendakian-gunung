@@ -9,54 +9,58 @@
     <form method="post" action="/dashboard/datapendaki" class="mb-5" enctype="multipart/form-data">
         @csrf
          <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" required autofocus value="{{ old('title')  }}">
-            @error('title')
+        <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autofocus value="{{ old('name')  }}">
+            @error('name')
             <div  class="invalid-feedback"> 
                 {{ $message }}
             </div>
             @enderror
         </div>
          <div class="mb-3">
-            <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" value="{{ old('slug') }}">
-            @error('slug')
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
+            @error('email')
             <div  class="invalid-feedback"> 
                 {{ $message }}
             </div>
             @enderror
         </div>
          <div class="mb-3">
-            <label for="category" class="form-label">Category</label>
-            <select class="form-select" name="category_id">
-                @foreach ($categories as $category)
-
-                 @if(old('category_id') == $category->id)
-                  <option value="{{ $category->id }} " selected> {{ $category->nama }} </option>
-                 @else
-                  <option value="{{ $category->id }}"> {{ $category->nama }} </option>
-                 @endif
-
-                @endforeach
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="image" class="form-label">Post Image</label>
-            <img class="img-preview img-fluid mb-3 col-sm-5">
-            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
-            @error('image')
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}">
+            @error('address')
             <div  class="invalid-feedback"> 
                 {{ $message }}
             </div>
             @enderror
-          </div>
+        </div>
          <div class="mb-3">
-            <label  for="body" class="form-label">Body</label>
-            @error('body')
-            <p class="text-danger">{{ $message }}</p>
+            <label for="number" class="form-label">Number</label>
+            <input type="number" class="form-control @error('number') is-invalid @enderror" id="number" name="number" value="{{ old('number') }}">
+            @error('number')
+            <div  class="invalid-feedback"> 
+                {{ $message }}
+            </div>
             @enderror
-            <input id="body" type="hidden" name="body" value="{{ old('body') }}">
-            <trix-editor input="body"></trix-editor>
+        </div>
+         <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}">
+            @error('username')
+            <div  class="invalid-feedback"> 
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+         <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password') }}">
+            @error('password')
+            <div  class="invalid-feedback"> 
+                {{ $message }}
+            </div>
+            @enderror
         </div>
             <button style="background-color:#3a5a40; color:white;" type="submit" class="btn btn">Create Post</button>
     </form>  

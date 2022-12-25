@@ -6,17 +6,18 @@
       </div>
       
       @if(session()->has('success'))
-      <div class="alert alert-success col-lg-10" role="alert">
+      <div class="alert alert-success col-lg-12" role="alert">
         {{ session('success') }}
       </div>
       @endif
 
-      <div class="table-responsive col-lg-10">
+      <div class="table-responsive col-lg-12">
         <a style="background-color : #3a5a40; color:white;" class="btn btn" href="/dashboard/booking/create">Create New Booking</a>
         <table class="table table-striped table-sm mt-3">
           <thead>
             <tr>
               <th scope="col">No</th>
+              <th scope="col">Booking ID</th>
               <th scope="col">Lokasi</th>
               <th scope="col">Nama Pendaki</th>
               <th scope="col">Check In</th>
@@ -31,6 +32,7 @@
 
             <tr>
               <td>{{ $loop->iteration }}</td>
+              <td> {{ $user->id }} </td>
               <td>{{ $user->lokasi }}</td>
               <td>{{ $user->userbooking->name }}</td>
               <td>{{ $user->checkin_date }} </td>

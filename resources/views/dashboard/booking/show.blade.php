@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <h2 class="mb-3 mt-4" >Data Booking</h2>
 
-            <a class="btn btn-success" href="/dashboard/booking"><span data-feather="arrow-left"></span> Back To All My Posts</a>
+            <a class="btn btn-success" href="/dashboard/booking"><span data-feather="arrow-left"></span> Back To All Data Booking</a>
             <a class="btn btn-warning" href="/dashboard/booking/{{ $bookings->id }}/edit"><span data-feather="arrow-left"></span> Edit</a>
             <form action="/dashboard/booking/{{ $bookings->id }}" method="post" class="d-inline">
                     @method('delete')
@@ -19,6 +19,12 @@
           <span class="text">  </span>
         </h4>
         <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Booking ID</h6>
+            </div>
+            <span class="text">{{ $bookings->id }}</span>
+          </li>
         <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Lokasi</h6>

@@ -35,7 +35,7 @@ Route::get('/', function () {
 
 
 //login
-Route::get('/login', [LoginController::class,'index'])->middleware('guest');
+Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class,'authenticate']);
 Route::post('/logout', [LoginController::class,'logout']);
 
@@ -44,7 +44,7 @@ Route::get('/dashboard',function(){
     return view('/dashboard.index',[
         'title' => 'Dashboard'
     ]);
-})->name('login')->middleware('auth');
+})->middleware('auth');
 
 //CRUD
 Route::resource('/dashboard/posts',DashboardPostController::class)->middleware('auth');
@@ -80,7 +80,7 @@ Route::resource('/dashboard/datapendaki',AdminDataPendakiController::class)->mid
 Route::resource('/dashboard/booking',AdminDataBookingController::class)->middleware('admin');
 
 //tambahkategori
-Route::resource('/dashboard/categories',AdminCategoryController::class)->middleware('auth');
+Route::resource('/dashboard/categories',AdminCategoryController::class)->middleware('admin');
 
 //tambahkreator
 Route::resource('/dashboard/kreator',TambahKreatorController::class)->middleware('admin');
