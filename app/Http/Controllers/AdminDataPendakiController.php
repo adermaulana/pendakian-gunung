@@ -68,7 +68,11 @@ class AdminDataPendakiController extends Controller
      */
     public function show($id)
     {
-        //
+        $kreator = UserBooking::find($id);
+        return view ('dashboard.datapendaki.show',[
+            'title' => 'Data Pendaki',
+            'kreators' => $kreator
+        ]);
     }
 
     /**
@@ -102,6 +106,9 @@ class AdminDataPendakiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pendaki = UserBooking::find($id);
+        UserBooking::destroy($pendaki->id);
+
+        return redirect('/dashboard/datapendaki')->with('success','Data has been Deleted');
     }
 }

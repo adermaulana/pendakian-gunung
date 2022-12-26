@@ -80,9 +80,12 @@ class AdminDataBookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(BookingData $booking)
     {
-        //
+        return view('dashboard.booking.edit',[
+            'title' => 'Edit Data',
+            'booking' => $booking
+        ]);
     }
 
     /**
@@ -92,9 +95,24 @@ class AdminDataBookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, BookingData $booking)
     {
-        //
+                
+        $rules = [
+            'checkin_date' => 'required|after:today',
+            'checkout_date' => 'required|after:checkin_date',
+            'jumlah_pendaki' => 'required',
+            'bayar' => 'required',
+            'lokasi' => 'required'
+        ];
+
+        
+        $validateData = $request->validate($rules);
+
+        BookingData::where('id',$booking->id)
+            ->update($validateData);
+
+        return redirect('/dashboard/booking')->with('success','Post has been Update');
     }
 
     /**

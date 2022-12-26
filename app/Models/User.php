@@ -55,4 +55,6 @@ class User extends Authenticatable
         return Carbon::parse($this->attributes['created_at'])
             ->translatedFormat('1, d F Y');
     }
+
+    
 }

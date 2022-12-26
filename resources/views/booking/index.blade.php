@@ -98,6 +98,6 @@
     </ul>
 </div>
 </div>
-<p>Setelah Membaca Peraturan Tersebut dan Telah setuju, Silahkan Registrasi Disini <a id="warna" class=" text-decoration-none badge bg" href="/register">Registrasi</a>  , Jika sudah memiliki akun silahkan klik disini untuk melakukan pemesanan tiket<a id="warna2" class=" text-decoration-none badge bg" href="/booking/daftar">Booking</a></p>
+<p>Setelah Membaca Peraturan Tersebut dan Telah setuju, Silahkan Registrasi Disini <a id="warna" class=" text-decoration-none badge bg" href="/register">Registrasi</a>  , Jika sudah Login silahkan klik disini untuk melakukan pemesanan tiket<a id="warna2" class=" text-decoration-none badge bg" href="/booking/daftar">Booking</a></p>
 
 @endsection
