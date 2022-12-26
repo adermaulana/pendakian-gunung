@@ -24,6 +24,11 @@ return new class extends Migration
             $table->text('body');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
+            $table->engine = 'InnoDB';
+
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
         });
     }
 

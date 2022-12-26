@@ -107,7 +107,6 @@ class TambahKreatorController extends Controller
     {
         $user = User::find($id);
         User::destroy($user->id);
-
         return redirect('/dashboard/kreator')->with('success','Data has been Deleted');
     }
 }

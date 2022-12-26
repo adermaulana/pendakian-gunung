@@ -34,7 +34,13 @@
               <td>
                 <a href="/dashboard/kreator/{{ $user->id }}" class="badge bg-success"><span data-feather="eye"></span></a>
                 <a href="/dashboard/kreator/{{ $user->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                <form action="/dashboard/kreator/{{ $user->id }}" method="post" class="d-inline">
+                    @method('delete')
+                    @csrf
+                    <button class="badge bg-danger border-0" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data?')"><span data-feather="x-circle"></span></button>
+                </form>
               </td>
+              
             </tr>
 
             @endforeach 
