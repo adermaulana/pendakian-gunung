@@ -6,12 +6,12 @@
       </div>
       
       @if(session()->has('success'))
-      <div class="alert alert-success col-lg-6" role="alert">
+      <div class="alert alert-success col-lg-4" role="alert">
         {{ session('success') }}
       </div>
       @endif
 
-      <div class="table-responsive col-lg-6">
+      <div class="table-responsive col-lg-4">
         <a style="background-color : #3a5a40; color:white;" class="btn btn" href="/dashboard/categories/create">Create New Category</a>
         <table class="table table-striped table-sm mt-3">
           <thead>
