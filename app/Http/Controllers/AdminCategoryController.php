@@ -112,6 +112,6 @@ class AdminCategoryController extends Controller
     {
         Category::destroy($category->id);
 
-        return redirect('/dashboard/categories')->with('success','Post has been Deleted');
+        return redirect('/dashboard/categories')->with('success','Category has been Deleted');
     }
 }

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('bayar')->nullable();
             $table->timestamps();
             $table->string('lokasi');
+            $table->string('status')->nullable();
 
             $table->foreign('id_pendaki')
             ->references('id')->on('user_bookings')

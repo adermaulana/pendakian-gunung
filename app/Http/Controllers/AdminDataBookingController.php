@@ -45,7 +45,7 @@ class AdminDataBookingController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'checkin_date' => 'required|after:today',
+            'checkin_date' => 'required|after:yesterday',
             'checkout_date' => 'required|after:checkin_date',
             'jumlah_pendaki' => 'required',
             'bayar' => 'required',
@@ -99,11 +99,12 @@ class AdminDataBookingController extends Controller
     {
                 
         $rules = [
-            'checkin_date' => 'required|after:today',
+            'checkin_date' => 'required|after:yesterday',
             'checkout_date' => 'required|after:checkin_date',
             'jumlah_pendaki' => 'required',
             'bayar' => 'required',
-            'lokasi' => 'required'
+            'lokasi' => 'required',
+            'status' => 'required'
         ];
 
         

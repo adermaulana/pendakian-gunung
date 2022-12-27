@@ -68,7 +68,7 @@ Route::get('/booking/lembanna', [BookingController::class,'lembanna']);
 Route::post('/booking/lembanna', [BookingController::class,'store']);
 Route::get('/booking/tasosso', [BookingController::class,'tasosso']);
 Route::post('/booking/tasosso', [BookingController::class,'store']);
-Route::get('/booking/konfirmasipembayaran', [BookingController::class,'konfirmasi']);
+Route::get('/booking/konfirmasipembayaran', [BookingController::class,'konfirmasi'])->middleware('auth:userbooking');
 
 
 Route::get('/about', [AboutController::class,'index']);

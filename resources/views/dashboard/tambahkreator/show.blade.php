@@ -10,8 +10,6 @@
             <a class="btn btn-warning" href="/dashboard/kreator/{{ $kreator->id }}/edit"><span data-feather="arrow-left"></span> Edit</a>
 
             <article class="my-3 fs-5">
-            <h5 class="my-0">Role = 1 (Admin)</h5>
-            <h5 class="my-0">Role = 0 (Creator)</h5>
             <h4 class="d-flex justify-content-between align-items-center mb-3">
             
           <span class="text">  </span>
@@ -39,7 +37,11 @@
             <div>
               <h6 class="my-0">Role</h6>
             </div>
-            <span class="text">{{ $kreator->is_admin }}</span>
+            @if(old('is_admin',$kreator->is_admin) == 1)
+            <span name="is_admin" class="text-success">Admin</span>
+            @else
+            <span name="is_admin" class="text-primary">Author</span>
+            @endif
           </li>
         </ul>
             </article>
