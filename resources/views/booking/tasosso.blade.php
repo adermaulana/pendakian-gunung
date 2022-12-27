@@ -81,6 +81,7 @@
                     <input style="height:10px; padding-top:15px; padding-bottom:20px; font-size:20px;" class="form-control" value="Rp.5000" name="bayar" id="bayar" type="text" readonly> 
                 </div>
             </div>
+            <input type="hidden" id="status" name="status" value="Pending">
             <hr>
             <center>
             <div class="row">

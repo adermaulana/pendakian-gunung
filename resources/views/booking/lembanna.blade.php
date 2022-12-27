@@ -77,6 +77,7 @@
                     <br>
                     <h6 style="margin-top:-40px;">Harga Rp5.000/Orang</h6>
                 </div>
+                <input type="hidden" id="status" name="status" value="Pending">
                 <div style="margin-top:-54px;" class="form-floating col-lg-4 ">
                     <input style="height:10px; padding-top:15px; padding-bottom:20px; font-size:20px;" class="form-control" value="Rp.5000" name="bayar" id="bayar" type="text" readonly> 
                 </div>

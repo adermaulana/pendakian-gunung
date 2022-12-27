@@ -37,7 +37,7 @@
             <div>
               <h6 class="my-0">Role</h6>
             </div>
-            @if(old('is_admin',$kreator->is_admin) == 1)
+            @if($kreator->is_admin == 1)
             <span name="is_admin" class="text-success">Admin</span>
             @else
             <span name="is_admin" class="text-primary">Author</span>

@@ -71,6 +71,13 @@
                     <input  class="form-control" value="Rp.5000" name="bayar" id="bayar" type="text" readonly> 
                 </div>
             </div>
+            <div class="mb-3">
+         <label for="status" class="form-label">Status</label>
+            <select class="form-select" id="status" name="status">
+                  <option value="Belum Bayar" selected>Belum Bayar</option>
+                  <option value="Sudah Bayar">Sudah Bayar</option>
+            </select>
+        </div>
             <button style="background-color:#3a5a40; color:white;" type="submit" class="btn btn">Create Data</button>
     </form>  
 </div>  

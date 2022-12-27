@@ -41,18 +41,24 @@ class BookingController extends Controller
 
     public function store(Request $request){
         $validatedData = $request->validate([
-            'checkin_date' => 'required|after:today',
+            'checkin_date' => 'required|after:yesterday',
             'checkout_date' => 'required|after:checkin_date',
             'jumlah_pendaki' => 'required',
             'bayar' => 'required',
-            'lokasi' => 'required'
+            'lokasi' => 'required',
+            'status' => 'required'
         ]);
         
         $validatedData['id_pendaki'] = auth('userbooking')->user()->id;
 
         BookingData::create($validatedData);
-
-        return redirect('/booking/lembanna')->with('success','Berhasil Booking Ticket');
+        
+        if($request->lokasi == 'Tasosso'){
+            return redirect('/booking/tasosso')->with('success','Berhasil Booking Ticket');
+        } else  {
+            return redirect('/booking/lembanna')->with('success','Berhasil Booking Ticket');
+        }
+        
     }
 
 }

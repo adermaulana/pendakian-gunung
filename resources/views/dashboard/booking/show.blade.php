@@ -65,10 +65,12 @@
             <div>
               <h6 class="my-0">Status</h6>
             </div>
-            @if(old('status',$bookings->status) == 'Belum Bayar')
-            <span id="belumbayar" name="status" class="text-danger">{{ $bookings->status }}</span>
+            @if($bookings->status == 'Sudah Bayar')
+            <span  name="status" class="text-success">{{ $bookings->status }}</span>
+            @elseif($bookings->status == 'Pending')
+            <span  name="status" class="text-warning">{{ $bookings->status }}</span>
             @else
-            <span id="belumbayar" name="status" class="text-success">{{ $bookings->status }}</span>
+            <span  name="status" class="text-danger">{{ $bookings->status }}</span>
             @endif
           </li>
         </ul>

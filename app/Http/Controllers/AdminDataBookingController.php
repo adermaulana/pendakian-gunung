@@ -50,7 +50,8 @@ class AdminDataBookingController extends Controller
             'jumlah_pendaki' => 'required',
             'bayar' => 'required',
             'lokasi' => 'required',
-            'id_pendaki' => 'required'
+            'id_pendaki' => 'required',
+            'status' => 'required'
         ]);
         
         // $validatedData['id_pendaki'] = auth('userbooking')->user()->id;
