@@ -43,7 +43,7 @@
             Welcome Back, {{ auth('userbooking')->user()->name }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">My Booking</a></li>
+          <li><a class="dropdown-item" href="/list-booking">My Booking</a></li>
             <li><hr class="dropdown-divider"></li>
             <li>
               <form action="/logout" method="post">

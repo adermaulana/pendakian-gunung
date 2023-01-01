@@ -9,6 +9,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ListBookingController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\TambahKreatorController;
@@ -68,8 +69,13 @@ Route::get('/booking/lembanna', [BookingController::class,'lembanna']);
 Route::post('/booking/lembanna', [BookingController::class,'store']);
 Route::get('/booking/tasosso', [BookingController::class,'tasosso']);
 Route::post('/booking/tasosso', [BookingController::class,'store']);
-Route::get('/booking/konfirmasipembayaran', [BookingController::class,'konfirmasi'])->middleware('auth:userbooking');
+Route::get('/booking/konfirmasi-pembayaran', [BookingController::class,'konfirmasi'])->middleware('auth:userbooking');
 
+
+//listbooking
+Route::get('/list-booking', [ListBookingController::class,'index'])->middleware('auth:userbooking');
+Route::get('/my-account', [ListBookingController::class,'myAccount'])->middleware('auth:userbooking');
+Route::post('/logout', [ListBookingController::class,'logout'])->middleware('auth:userbooking');
 
 Route::get('/about', [AboutController::class,'index']);
 

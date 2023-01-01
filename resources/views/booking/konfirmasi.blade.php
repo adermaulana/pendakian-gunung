@@ -60,8 +60,8 @@
                     <table width="100%" style="background: #f9f9f9; border-bottom: 1px solid #eee; border-collapse: collapse; color: #999;">
                         <tbody>
                             <tr>
-                                <td width="50%" style="padding: 20px;"><strong style="color: #333; font-size: 24px;">{{ $user->bayar }} </strong> Tunai</td>
-                                <td align="right" width="50%" style="padding: 20px;">Tunjukkan di pos registrasi <span class="il"></span></td>
+                                <td width="50%" style="padding: 20px;"><strong style="color: #333; font-size: 24px;">Pendakian {{ $user->lokasi }} </strong></td>
+                                <td align="right" width="50%" style="padding: 20px;">Tunjukkan di pos Registrasi <span class="il"></span></td>
                             </tr>
                         </tbody>
                     </table>

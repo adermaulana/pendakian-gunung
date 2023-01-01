@@ -21,6 +21,15 @@
         color:white;
         background-color:black;
     }
+    #warna3 {
+        background-color:#023e8a;
+        margin-left:4px;
+    }
+
+    #warna3:hover {
+        color:white;
+        background-color:black;
+    }
 
     #warna:hover {
         color:white;
@@ -31,7 +40,7 @@
 
 <div class="baru card mb-3">
   <div class="card-body text-center">
-    <h6 align="left">Terima kasih telah berkunjung ke situs Booking Online Pendakian Gunung Undipa, melalui situs ini anda dapat melakukan pendaftaran untuk pendakian Gunung. Jika anda telah mendaftar, masukkan sandi pendaftaran pada kolom Sandi Pendaftaran, untuk melihat status pendaftaran anda. Tetapi jika belum mendaftar, anda wajib mempelajari Ketentuan Umum di bawah ini, dan anda harus menyetujuinya.</h6>
+    <h6 align="left">Terima kasih telah berkunjung ke situs Booking Online Pendakian Gunung , melalui situs ini anda dapat melakukan pendaftaran untuk pendakian Gunung. Jika anda telah mendaftar, Silahkan <a class="text-decoration-none badge bg" id="warna3" href="/login">Login</a> . Tetapi jika belum mendaftar, anda wajib mempelajari Ketentuan Umum di bawah ini, dan anda harus menyetujuinya.</h6>
   </div>
   <div>
   <h4><marquee style="color:red;" behavior="" direction=""> Pendaftar baru, wajib membaca dan mempelajari semua persyaratan di bawah ini !!!</marquee></h4>
@@ -48,7 +57,7 @@
 
     <ul  align="left">
         <li>Berbadan sehat pada saat melakukan pendakian (tidak memiliki riwayat penyakit yang berbahaya seperti asma, tekanan darah tinggi, jantung atau penyakit lainnya yang berada dalam pengawasan dokter);</li>
-        <li>Masuk jalur pendakian antara pukul 06.00 s/d 18.00 WIB dan mendaki pada jalur yang sudah ditentukan/jalur resmi, yakni Jalur Cibodas, Gunung Putri dan Selabintana;</li>
+        <li>Masuk jalur pendakian antara pukul 06.00 s/d 18.00 WIB dan mendaki pada jalur yang sudah ditentukan/jalur resmi, yakni Jalur Lembanna dan Tasosso;</li>
         <li>Membawa/menggunakan perlengkapan pendakian yang memenuhi persyaratan keselamatan dan kenyamanan, yaitu:
             <ol type="a">
                 <li>Tenda kedap air;</li>

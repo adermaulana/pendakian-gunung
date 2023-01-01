@@ -5,7 +5,7 @@
 @if(session()->has('success'))
       <div class="alert alert-success col-lg-11" role="alert">
         {{ session('success') }}
-        <a target="_blank" href="konfirmasipembayaran">Silahkan klik link berikut sebagai bukti telah melakukan Registrasi</a>
+        <a target="_blank" href="konfirmasi-pembayaran">Silahkan klik link berikut sebagai bukti telah melakukan Registrasi</a>
       </div>
 @endif
 

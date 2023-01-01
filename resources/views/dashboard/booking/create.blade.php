@@ -76,6 +76,7 @@
             <select class="form-select" id="status" name="status">
                   <option value="Belum Bayar" selected>Belum Bayar</option>
                   <option value="Sudah Bayar">Sudah Bayar</option>
+                  <option value="Pending">Pending</option>
             </select>
         </div>
             <button style="background-color:#3a5a40; color:white;" type="submit" class="btn btn">Create Data</button>
