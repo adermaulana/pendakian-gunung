@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class ListBookingController extends Controller
 {
     public function index(){
-        return view('listbooking',[
+        return view('user-list-booking.listbooking',[
             'title' => 'My Booking',
-            'bookings' => BookingData::latest()->where('id_pendaki', auth('userbooking')->user()->id)->get(),
+            'bookings' => BookingData::latest()->where('id_pendaki', auth('userbooking')->user()->id)->get()
         ]);
     }
 
@@ -22,7 +22,18 @@ class ListBookingController extends Controller
         ]);
     }
 
-    public function logout(Request $request){
+
+    public function detail($id){
+
+        $booking = BookingData::find($id);
+        return view('user-list-booking.detail',[
+            'title' => 'Details',
+            'bookings' => $booking
+        ]);
+    }
+
+
+    public function keluar(Request $request){
         if(Auth::logout());
 
         $request->session()->invalidate();

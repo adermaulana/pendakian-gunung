@@ -75,8 +75,10 @@ Route::get('/booking/konfirmasi-pembayaran', [BookingController::class,'konfirma
 //listbooking
 Route::get('/list-booking', [ListBookingController::class,'index'])->middleware('auth:userbooking');
 Route::get('/my-account', [ListBookingController::class,'myAccount'])->middleware('auth:userbooking');
-Route::post('/logout', [ListBookingController::class,'logout'])->middleware('auth:userbooking');
+Route::get('/list-booking/detail/{id}', [ListBookingController::class,'detail'])->middleware('auth:userbooking');
+Route::post('/logout-user', [ListBookingController::class,'keluar'])->middleware('auth:userbooking');
 
+//about
 Route::get('/about', [AboutController::class,'index']);
 
 //datapendaki

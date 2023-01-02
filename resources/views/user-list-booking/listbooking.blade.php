@@ -3,9 +3,11 @@
 @section('container')
 
 <style>
-    .nav-link {
-        color:#588157;
-    }
+
+ .nav-link {
+  color: #369647;
+}
+
 </style>
 
 <div style="margin-bottom:278px;" id="content-wrapper">	
@@ -30,7 +32,7 @@
 			      
 			      <a  class="nav-link"  href="/my-account" role="tab" ><i class=""></i>  My Account</a>
 			      <div class="border text-dark border-bottom"></div>
-                  <form action="/logout" method="post">
+                  <form action="/logout-user" method="post">
                     @csrf
                   <button type="submit" class="nav-link text-dark p-3"> Log Out</button>
                   </form>
@@ -68,10 +70,16 @@
                                         <div class="card-footer">
                                             <div class="row">
                                             <div class="col text-left align-self-center">
+                                                @if($booking->status == 'Sudah Bayar')
                                                 <span class="text-decoration-none badge bg-success">{{ $booking->status }} <i class="fas fa-ban"></i></span>
+                                                @elseif($booking->status == 'Pending')
+                                                <span class="text-decoration-none badge bg-warning">{{ $booking->status }} <i class="fas fa-ban"></i></span>
+                                                @else
+                                                <span class="text-decoration-none badge bg-danger">{{ $booking->status }} <i class="fas fa-ban"></i></span>
+                                                @endif
                                             </div>
                                                 <div class="col text-right action-right">
-                                                    <a style="margin-left:200px;" href="" class="btn-link disabled">See Details</a>
+                                                    <a style="margin-left:200px;" href="/list-booking/detail/{{ $booking->id }}" class="btn-link disabled">See Details</a>
                                             </div>
                                             </div>
                                             </div>				  

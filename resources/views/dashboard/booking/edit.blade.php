@@ -68,7 +68,7 @@
                     <h6 style="margin-top:-25px;">Harga Rp5.000/Orang</h6>
                 </div>
                 <div  class="mb-3">
-                    <input  class="form-control" value="Rp.5000" name="bayar" id="bayar" type="text" readonly> 
+                    <input  class="form-control" value="{{ old('bayar',$booking->bayar) }}" name="bayar" id="bayar" type="text" readonly> 
                 </div>
             </div>
             <div class="mb-3">
