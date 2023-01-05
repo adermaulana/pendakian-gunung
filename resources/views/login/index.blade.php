@@ -1,10 +1,20 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="row justify-content-center">
-  <div class="col-md-4">
 
-    @if(session()->has('success'))
+<style>
+  @media (max-width: 768px) { 
+    .container {
+      margin-top:100px;
+      margin-bottom:70px;
+    }
+   }
+</style>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      
+      @if(session()->has('success'))
       <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -18,7 +28,7 @@
       </div>
     @endif
 
-    <main class="form-signin">
+    <main  class="form-signin">
       <img class="mt-2 mb-2" src="img/pendaki.jpg" alt="" width="100" style="margin-left:120px">
       <h1 class="h4 mb-3 fw-normal text-center ">Please login</h1>
       <form action="/login" method="post">
@@ -42,6 +52,7 @@
       <small style="margin-bottom:102px;" class="d-block text-center mt-3 ">Not registered? <a style="color:#588157" href="/register">Register Now!</a></small>
     </main>
   </div>
+</div>
 </div>
 
 @endsection

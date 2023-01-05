@@ -2,6 +2,23 @@
 
 @section('container')
 
+<style>
+  @media (max-width: 768px) { 
+    .carousel {
+      display:none;
+    }
+    .lembanna{
+      margin-top:50px;
+    }
+    .container{
+      margin-bottom:103px;
+    }
+    .hp{
+      margin-top:45px;
+    }
+   }
+</style>
+
 @if(session()->has('success'))
       <div class="alert alert-success col-lg-11" role="alert">
         {{ session('success') }}
@@ -10,7 +27,7 @@
 @endif
 
 @auth('userbooking')
-<h1 class="mb-4"> Lembanna </h1>
+<h1 class="lembanna mb-4"> Lembanna </h1>
 
 <div class="container mb-4">
     <div class="row">
@@ -79,7 +96,7 @@
                     <h6 style="margin-top:-40px;">Harga Rp5.000/Orang</h6>
                 </div>
                 <div style="margin-top:-54px;" class="form-floating col-lg-4 ">
-                    <input style="height:10px; padding-top:15px; padding-bottom:20px; font-size:20px;" class="form-control" value="Rp.5000" name="bayar" id="bayar" type="text" readonly> 
+                    <input style="height:10px; padding-top:15px; padding-bottom:20px; font-size:20px;" class="hp form-control" value="Rp.5000" name="bayar" id="bayar" type="text" readonly> 
                 </div>
             </div>
             <input type="hidden" id="status" name="status" value="Pending">

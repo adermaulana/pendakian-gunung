@@ -1,7 +1,16 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="row justify-content-center">
+<style>
+  @media (max-width: 768px) { 
+    .container {
+      margin-top:90px;
+      margin-bottom:83px;
+    }
+   }
+</style>
+<div  class="container">
+  <div class="row justify-content-center">
     <div class="col-lg-4">
         <main class="form-registration">
             <h1 class="h3 mb-3 fw-normal text-center">Registration Form</h1>
@@ -39,7 +48,7 @@
               <label for="number">Handphone Number</label>
               @error('number')
               <div  class="invalid-feedback"> 
-                  {{ $message }}
+                {{ $message }}
               </div>
               @enderror
             </div>
@@ -66,5 +75,6 @@
           <small style="margin-bottom:62px;" class="d-block text-center">Already Registered? <a style="color:#588157;" href="/login">Login</a></small>
         </main>
     </div>
+</div>
 </div>
 @endsection
