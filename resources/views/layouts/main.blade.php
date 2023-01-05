@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/landingpage.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/sticky-footer.css">
     <title>Pendakian | {{ $title }} </title>
   </head>
   <body>

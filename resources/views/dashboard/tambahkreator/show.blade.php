@@ -4,11 +4,15 @@
 <div class="container">
     <div class="row justify-content-center mb-5">
         <div class="col-md-8">
-            <h2 class="mb-3 mt-4" >Data Admin/Creator</h2>
+            <h2 class="mb-3 mt-4" >Data Admin/Author</h2>
 
             <a class="btn btn-success" href="/dashboard/kreator"><span data-feather="arrow-left"></span> Back To All Data User</a>
             <a class="btn btn-warning" href="/dashboard/kreator/{{ $kreator->id }}/edit"><span data-feather="arrow-left"></span> Edit</a>
-
+            <form action="/dashboard/kreator/{{ $kreator->id }}" method="post" class="d-inline">
+                    @method('delete')
+                    @csrf
+                    <button class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data?')"><span data-feather="x-circle"></span>Delete</button>
+                </form>
             <article class="my-3 fs-5">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
             

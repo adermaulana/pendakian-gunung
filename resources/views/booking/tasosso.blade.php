@@ -11,9 +11,10 @@
 
 @auth('userbooking')
 <h1 class="mb-4"> Tasosso </h1>
+
 <div class="container mb-4">
     <div class="row">
-        <div id="carouselExampleControls" class=" carousel slide w-50 " data-bs-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide w-50 " data-bs-ride="carousel">
            <div class="carousel-inner">
                 <div class="carousel-item active">
                  <img src="/img/bawakaraeng.jpg" class="d-inline w-100" alt="bawakareng">
@@ -26,7 +27,7 @@
               </div>
            </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span style="margin-bottom:150px" class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span style="margin-bottom:150px;" class="carousel-control-prev-icon" aria-hidden="true"></span>
          <span class="visually-hidden">Previous</span>
          </button>
          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
@@ -35,7 +36,7 @@
           </button>
      </div>
      <div class="col">
-     <div class="card" style="width: 450px; height: 452px;">
+     <div class="card" style="margin:auto;">
         <div class="card-body">
         <form method="post" action="/booking/tasosso" class="mb-5" enctype="multipart/form-data">
                 @csrf
@@ -86,7 +87,7 @@
             <center>
             <div class="row">
                 <div class="col">
-                <button style="margin-top:20px; color:white;" type="submit" class="btn btn-warning btn-lg-col-6">Booking Now</button>
+                <button style="margin-top:23px; margin-bottom:auto; color:white;" type="submit" class="btn btn-warning btn-lg-col-6">Booking Now</button>
                 </div>
             </div>
             </center>

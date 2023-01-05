@@ -15,14 +15,11 @@
     </style>
     <!-- Custom styles for this template -->
   </head>
-  <body class="d-flex flex-column h-100">
     
 <!-- Begin page content -->
 
-<footer  class="footer mt-auto mb-auto py-2 bg-gradient">
-  <div class="martin">
-    <span style="color:white; margin-left:410px;" class="position-relative top-100 start-100"><a style="color:white;" href="https://instagram.com/adermaulana" target="_blank" class="text-decoration-none">Created by Ade Rahmat Maulana</a></span>
+<footer class="footer mt-auto py-2 bg-gradient">
+  <div class="sticky-footer">
+    <span class="text-muted">Created By <a href="https://instagram.com/adermaulana" target="_blank" class="a text-decoration-none">Ade Rahmat Maulana</a></span>
   </div>
 </footer>
-
-  </body>

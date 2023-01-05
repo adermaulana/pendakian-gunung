@@ -10,7 +10,7 @@
 
 </style>
 
-<div style="margin-bottom:278px;" id="content-wrapper">	
+<div style="margin-bottom:318px;" id="content-wrapper">	
 		<div class="container">
 			<!-- <div class="row">
 				<div class="col-md-4">hwhw</div>
@@ -22,15 +22,13 @@
 			    <div class="nav flex-column nav-pills bg-white border rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 			      <div class="nav-link p-3 text-dark" href="#">
 		           <div class="text-center">
-		           <img src="https://bookingciremai.menlhk.go.id/kawasan-sso/images/user.png?1670035419402787" width="50px"> 
+		           <img class="rounded-circle" src="/img/dara.jpg" width="50px"> 
 		           </div>
 		           <div class="text-center"><strong>{{ auth('userbooking')->user()->name }}</strong> <div class="text-muted small">{{ auth('userbooking')->user()->email }}</div>
 		           </div>
 		          </div>
 		          <div class="border text-dark border-bottom"></div>
 			      <a  class="nav-link" href="/list-booking" role="tab"><i class=""></i> My Booking</a>
-			      
-			      <a  class="nav-link"  href="/my-account" role="tab" ><i class=""></i>  My Account</a>
 			      <div class="border text-dark border-bottom"></div>
                   <form action="/logout-user" method="post">
                     @csrf
@@ -78,8 +76,8 @@
                                                 <span class="text-decoration-none badge bg-danger">{{ $booking->status }} <i class="fas fa-ban"></i></span>
                                                 @endif
                                             </div>
-                                                <div class="col text-right action-right">
-                                                    <a style="margin-left:200px;" href="/list-booking/detail/{{ $booking->id }}" class="btn-link disabled">See Details</a>
+                                                <div class="col text-end action-right">
+                                                    <a href="/list-booking/detail/{{ $booking->id }}" class="btn-link disabled">See Details</a>
                                             </div>
                                             </div>
                                             </div>				  

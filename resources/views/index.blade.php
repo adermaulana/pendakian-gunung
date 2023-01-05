@@ -2,17 +2,12 @@
 
 @section('container')
 
-   <div style="margin-top:-50px; margin-left:50px;" class="container">
-      <h1 class="display-4 fw-bold"></br>Portal Berita Pendakian Di Indonesia</h1>
-   </div>
-<section class="jumbotron">
 <div class="container">
-
+  
+  <h1 class="display-4 fw-bold text-center mb-4">Portal Berita Pendakian Di Indonesia</h1>
   <div class="row justify-content-center text-center">
-
     <div class="col-mb-3">                 
-
-        <div style="margin-top:-70px; overflow:hidden; max-height:400px;" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div style="margin:auto; overflow:hidden; max-height:400px;" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img  src="/img/pendaki.jpg" class="d-block w-100" alt="...">

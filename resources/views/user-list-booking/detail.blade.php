@@ -10,12 +10,8 @@
 
 </style>
 
-<div style="margin-bottom:278px;" id="content-wrapper">	
+<div style="margin-bottom:150px;" id="content-wrapper">	
 		<div class="container">
-			<!-- <div class="row">
-				<div class="col-md-4">hwhw</div>
-				<div class="col-md-8">jafhjjhfwjfafawf</div>
-			</div> -->
 			
 			<div class="row justify-content-center">
 			  <div class="col-md-3">
@@ -30,7 +26,6 @@
 		          <div class="border text-dark border-bottom"></div>
 			      <a  class="nav-link" href="/list-booking" role="tab"><i class=""></i> My Booking</a>
 			      
-			      <a  class="nav-link"  href="/my-account" role="tab" ><i class=""></i>  My Account</a>
 			      <div class="border text-dark border-bottom"></div>
                   <form action="/logout-user" method="post">
                     @csrf
@@ -86,7 +81,7 @@
             <div>
               <h6 class="my-0">Jumlah Pendaki</h6>
             </div>
-            <span class="text"> {{ $bookings->jumlah_pendaki }} </span>
+            <span class="text"> {{ $bookings->jumlah_pendaki }} Orang </span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>

@@ -16,13 +16,7 @@ class ListBookingController extends Controller
         ]);
     }
 
-    public function myAccount(){
-        return view('user-account.index',[
-            'title' => 'My Account'
-        ]);
-    }
-
-
+    
     public function detail($id){
 
         $booking = BookingData::find($id);
