@@ -83,7 +83,11 @@ class AdminDataPendakiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pendaki = UserBooking::find($id);
+        return view ('dashboard.datapendaki.edit',[
+            'title' => 'Edit Data',
+            'bookings' => $pendaki
+        ]);
     }
 
     /**
@@ -95,7 +99,22 @@ class AdminDataPendakiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $userbooking = UserBooking::find($id);
+        $rules = [
+            'name' => 'required|max:255',
+            'email' => 'required|email:dns',
+            'address' => 'required|max:255',
+            'number' => 'required|min:6|max:13',
+            'username' => ['required','min:4','max:255']
+        ];
+
+        $validateData = $request->validate($rules);
+
+        UserBooking::where('id',$userbooking->id)
+            ->update($validateData);
+
+        return redirect('/dashboard/datapendaki')->with('success','Data has been Update');
     }
 
     /**

@@ -48,7 +48,7 @@
          <label for="is_admin" class="form-label">Role</label>
             <select class="form-select" id="is_admin" name="is_admin">
                   <option value="1" selected>Admin</option>
-                  <option value="0">Creator</option>
+                  <option value="0">Author</option>
             </select>
         </div>
             <button style="background-color:#3a5a40; color:white;" type="submit" class="btn btn">Create Data</button>

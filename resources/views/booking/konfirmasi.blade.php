@@ -11,13 +11,27 @@
     <title>Pendakian | {{ $title }} </title>
   </head>
  
+  <style>
+
+
+    @media (max-width: 768px) { 
+        .main {
+            margin-right:210px;
+            margin-top:150px;
+        }
+        .tes {
+            display:none;
+        }
+
+    }
+  </style>
+
   <body>
-  <a style="margin-left:342px;" class="btn btn-success btn-lg mt-3 mb-3" href="/booking/daftar"><span  data-feather="arrow-left"></span></a>
-  <a style="" class="btn btn-primary btn-lg mt-3 mb-3" href="/booking/daftar"><span  data-feather="printer"></span></a>  
+  <a  style="margin-left:342px;" class=" tes btn btn-success btn-lg mt-3 mb-3" href="/booking/daftar"><span  data-feather="arrow-left"></span></a>
 
   <center>
 
-  <div bgcolor="#f6f6f6" style="color: #333; height: 100%; width: 50%;" height="100%" width="100%">
+  <div class="main" bgcolor="#f6f6f6" style="color: #333; height: 100%; width: 50%;">
     <table bgcolor="#f6f6f6" cellspacing="0" style="border-collapse: collapse; padding: 40px; width: 100%;" width="100%">
         <tbody>
         @foreach ($bookingdata as $user)

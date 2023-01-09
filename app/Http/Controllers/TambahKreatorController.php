@@ -80,9 +80,12 @@ class TambahKreatorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $kreator)
     {
-        //
+        return view('dashboard.tambahkreator.edit',[
+            'title' => 'Edit Data',
+            'kreator' => $kreator
+        ]);
     }
 
     /**
@@ -92,9 +95,21 @@ class TambahKreatorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $kreator)
     {
-        //
+        $rules = [
+            'name' => 'required|max:255',
+            'email' => 'required|email:dns',
+            'username' => ['required','min:4','max:255'],
+            'is_admin' => 'required'
+        ];
+
+        $validateData = $request->validate($rules);
+
+        User::where('id',$kreator->id)
+            ->update($validateData);
+
+        return redirect('/dashboard/kreator')->with('success','Data has been Update');
     }
 
     /**

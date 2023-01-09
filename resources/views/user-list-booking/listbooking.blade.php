@@ -6,7 +6,13 @@
 
  .nav-link {
   color: #369647;
+
+  
 }
+
+@media (max-width: 768px) { 
+
+   }
 
 </style>
 
@@ -22,7 +28,7 @@
 			    <div class="nav flex-column nav-pills bg-white border rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 			      <div class="nav-link p-3 text-dark" href="#">
 		           <div class="text-center">
-		           <img class="rounded-circle" src="/img/dara.jpg" width="50px"> 
+		           <img class="rounded-circle" src="https://bookingciremai.menlhk.go.id/kawasan-sso/images/user.png?1670035419402787" width="50px"> 
 		           </div>
 		           <div class="text-center"><strong>{{ auth('userbooking')->user()->name }}</strong> <div class="text-muted small">{{ auth('userbooking')->user()->email }}</div>
 		           </div>
@@ -56,8 +62,8 @@
                                                     {{ $booking->id }}
                                                 </strong>
                                             </div>								    
-                                            <div  class="col text">
-                                                <strong style="margin-left:230px;" >{{ $booking->bayar }}
+                                            <div style="text-align:right;" class="col text">
+                                                <strong class="bayar"  >{{ $booking->bayar }}
                                             </strong>
                                             </div>							    
                                         </div>
