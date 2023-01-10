@@ -32,8 +32,12 @@
             @endif
          <div class="input-group mb-3">
            <input type="text" class="form-control" placeholder="Masukkan Berita yang Ingin di Cari.." name="search" value="{{ request ('search') }}">
-           <button class="btn btn" type="submit" style="background-color:#3a5a40; color:white;">Search</button>
-           <a  href="/categories" class="btn btn" style="background-color:#3a5a40; color:white;">Categories</a> 
+           <button class="btn btn" type="submit" style="border-radius:5px;background-color:#3a5a40; color:white;">Search</button>
+           <div class="row">
+            <div class="col">
+                <a  href="/categories" class="btn btn" style="background-color:#3a5a40; color:white;">Categories</a>
+            </div>
+           </div> 
          </div>
         </form>
     </div>

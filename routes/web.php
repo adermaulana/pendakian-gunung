@@ -4,6 +4,7 @@ use App\Models\Category;
 use App\Models\UserBooking;
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LoginController;
@@ -91,3 +92,8 @@ Route::resource('/dashboard/categories',AdminCategoryController::class)->middlew
 
 //tambahkreator
 Route::resource('/dashboard/kreator',TambahKreatorController::class)->middleware('admin');
+
+//UJIAN APLIKASI KONSENTRASI
+Route::get('/data', [DataController::class,'index'])->middleware('admin');
+Route::get('/data/create', [DataController::class,'create'])->middleware('admin');
+Route::post('/data/create', [DataController::class,'store'])->middleware('admin');

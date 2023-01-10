@@ -31,7 +31,7 @@ class LoginController extends Controller
         } else if (Auth::guard('userbooking')->attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->intended('/booking/daftar');
+            return redirect()->intended('/');
         
         }
 

@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\UserBooking;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,17 +19,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         
+        //memanggil seeder lain
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(DataSeeder::class);
         
         User::create([
             'name' => 'Ade Rahmat Maulana',
             'username' => 'adermaulana',
             'email' => 'adermaulana15@gmail.com',
-            'password' => bcrypt('12345')
+            'password' => bcrypt('12345'),
+            'is_admin' => 1
         ]);
 
         // User::create([
