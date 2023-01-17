@@ -1,5 +1,16 @@
 @extends('layouts.main')
 
+<style>
+
+
+@media (max-width: 768px) { 
+    .isi {
+        margin-top:30px;
+        padding-bottom:150px;
+    }
+}
+</style>
+
 @section('container')
 
 @auth('userbooking')
@@ -26,9 +37,11 @@
  </div>
 </div>
 @elseif(Auth::Check())
-<h1 style="margin-bottom:499px">Anda adalah Admin/Author tidak bisa booking<a class="text-decoration-none" href="/dashboard"> Masuk ke Menu Dashboard</a></h1>
+<h1 style="margin-bottom:451px">Anda adalah Admin/Author tidak bisa booking<a class="text-decoration-none" href="/dashboard"> Masuk ke Menu Dashboard</a></h1>
 @else
-<h1 style="margin-bottom:499px">Login Terlebih Dahulu <a href="/login">Disini</a></h1>
+<div class="container isi">
+    <h1 id="baru" style="margin-bottom:499px">Login Terlebih Dahulu <a href="/login">Disini</a></h1>
+</div>
 @endauth
 
 

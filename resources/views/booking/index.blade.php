@@ -88,15 +88,15 @@
     <h6>DILARANG DILAKUKAN OLEH PENDAKI</h6>
     <hr>
     <p>
-    Setiap pendaki atau kelompok pendaki selama berada di kawasan Taman Nasional Gunung Gede Pangrango (TNGGP), dilarang melakukan hal-hal sebagai berikut:
+    Setiap pendaki atau kelompok pendaki selama berada di kawasan Pendakian, dilarang melakukan hal-hal sebagai berikut:
     </p>
 
     <ul  align="left">
 
-        <li>Membawa binatang dan tumbuhan dari luar dan dari dalam kawasan TNGGP;</li>
-        <li>Mengambil, memetik, memindahkan atau mencabut tumbuhan di dalam kawasan TNGGP;</li>
-        <li>Membuat api unggun di dalam kawasan TNGGP;</li>
-        <li>Mengganggu, memindahkan atau melakukan vandalisme pada fasilitas yang tersedia di dalam kawasan TNGGP;</li>
+        <li>Membawa binatang dan tumbuhan dari luar dan dari dalam kawasan Pendakian;</li>
+        <li>Mengambil, memetik, memindahkan atau mencabut tumbuhan di dalam kawasan Pendakian;</li>
+        <li>Membuat api unggun di dalam kawasan Pendakian;</li>
+        <li>Mengganggu, memindahkan atau melakukan vandalisme pada fasilitas yang tersedia di dalam kawasan Pendakian;</li>
         <li>Melakukan penggantian atau perubahan identitas pendaki (mengganti data calon pendaki yang sudah di validasi) pada SIMAKSI tanpa sepengetahuan petugas;</li>
         <li>Menggunakan SIMAKSI pendakian untuk kegiatan lain, seperti diklat pencinta alam, kegiatan orientasi pencinta alam, atau kegiatan lain yang sejenis;</li>
         <li>Membawa obat-obatan terlarang, minuman beralkohol, atau barang lain yang sejenis;</li>

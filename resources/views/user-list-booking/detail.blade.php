@@ -4,6 +4,17 @@
 
 <style>
 
+
+@media (max-width: 768px) { 
+  .name {
+    margin-left:110px;
+  }
+
+}
+</style>
+
+<style>
+
  .nav-link {
   color: #369647;
 }
@@ -63,7 +74,7 @@
             <div>
               <h6 class="my-0">Nama Pendaki</h6>
             </div>
-            <span class="text"> {{ $bookings->userbooking->name }} </span>
+            <span class="text name"> {{ $bookings->userbooking->name }} </span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>

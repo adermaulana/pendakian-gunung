@@ -18,7 +18,7 @@ class AdminDataBookingController extends Controller
     {
         $this->authorize('admin');
         return view('dashboard.booking.index',[
-            'title' => 'Data Booking',
+            'title' => 'Dashboard Data Booking',
             'bookingdata' => BookingData::latest()->paginate(15)
         ]);
     }

@@ -17,7 +17,7 @@ class AdminDataPendakiController extends Controller
     {
         $this->authorize('admin');
         return view('dashboard.datapendaki.index',[
-            'title' => 'Data Pendaki',
+            'title' => 'Dashboard Data Pendaki',
             'userbookings' => UserBooking::all()
         ]);
     }

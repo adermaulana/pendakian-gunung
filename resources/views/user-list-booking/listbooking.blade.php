@@ -94,9 +94,8 @@
                     @endforeach
                     @else
                     <p style="margin-bottom:377px;" class="text-center fs-4">No Booking Found.</p>
+                    </div>
                     @endif
-
-			      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
 			    </div>
 			  </div>
 			</div>

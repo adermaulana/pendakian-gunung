@@ -18,7 +18,7 @@ class TambahKreatorController extends Controller
     public function index()
     {
         return view('dashboard.tambahkreator.index',[
-            'title' => 'Tambah Kreator',
+            'title' => 'Dashboard Tambah Kreator',
             'kreator' =>  User::all()
         ]);
     }
@@ -31,7 +31,7 @@ class TambahKreatorController extends Controller
     public function create()
     {
         return view('dashboard.tambahkreator.create',[
-            'title' => 'Tambah Kreator'
+            'title' => 'Dashboard Tambah Kreator'
         ]);
     }
 
