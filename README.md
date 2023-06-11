@@ -20,7 +20,9 @@
         <li>php artisan key:generate (generate app key)</li>
         <li>php artisan migrate (migrasi database)</li>
         <li>php artisan db:seed</li>
-        <li> email : fadhil@gmail.com </li>
+        <li> username : adermaulana ( admin ) </li>
+        <li> password : 12345 </li>
+        <li> username : adera ( user ) </li>
         <li> password : 12345 </li>
     </ul>
 </body>
