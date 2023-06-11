@@ -49,7 +49,7 @@
     
         <button style="background-color:#588157;" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
       </form>
-      <small style="margin-bottom:102px;" class="d-block text-center mt-3 ">Not registered? <a style="color:#588157" href="/register">Register Now!</a></small>
+      <small class="d-block text-center mt-3 ">Not registered? <a style="color:#588157" href="/register">Register Now!</a></small>
     </main>
   </div>
 </div>
